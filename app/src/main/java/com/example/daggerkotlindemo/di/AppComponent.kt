@@ -19,6 +19,7 @@ import javax.inject.Singleton
 
         // our custom modules start here
         ActivityBuildersModule::class,
+        ViewModelFactoryModule::class,
         AppModule::class
     ]
 )

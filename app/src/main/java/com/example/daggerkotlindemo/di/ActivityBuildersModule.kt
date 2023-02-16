@@ -1,6 +1,7 @@
 package com.example.daggerkotlindemo.di
 
-import com.example.daggerkotlindemo.AuthActivity
+import com.example.daggerkotlindemo.di.auth.AuthViewModelsModule
+import com.example.daggerkotlindemo.ui.auth.AuthActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
@@ -13,6 +14,8 @@ abstract class ActivityBuildersModule {
     // Required to be an abstract method if we use @ContributesAndroidInjector annotation
     // This method declaration is specifying the AuthActivity as a potential client
     // and it can be now injected with dependencies
-    @ContributesAndroidInjector
+    @ContributesAndroidInjector(
+        modules = [AuthViewModelsModule::class]
+    )
     abstract fun contributeAuthActivity(): AuthActivity
 }
