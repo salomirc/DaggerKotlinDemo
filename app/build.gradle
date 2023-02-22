@@ -45,17 +45,16 @@ dependencies {
 
     //Dagger version
     def dagger_version = "2.45"
-    //Dagger general dependencies
     implementation "com.google.dagger:dagger:$dagger_version"
     kapt "com.google.dagger:dagger-compiler:$dagger_version"
+
     //Dagger Android dependencies
     implementation "com.google.dagger:dagger-android:$dagger_version"
-    implementation "com.google.dagger:dagger-android-support:$dagger_version"
+    implementation "com.google.dagger:dagger-android-support:$dagger_version" // if you use the support libraries
     kapt "com.google.dagger:dagger-android-processor:$dagger_version"
 
     //Glide version
     def glide_version = "4.12.0"
-    //Glide image processing library
     implementation "com.github.bumptech.glide:glide:$glide_version"
     kapt "com.github.bumptech.glide:compiler:$glide_version"
 
