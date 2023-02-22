@@ -15,7 +15,7 @@ import javax.inject.Inject
 // Required to extend from DaggerAppCompatActivity if we use @ContributesAndroidInjector annotation
 class AuthActivity : DaggerAppCompatActivity() {
 
-    lateinit var viewModel: AuthViewModel
+    private lateinit var viewModel: AuthViewModel
 
     @set:Inject
     lateinit var viewModelProviderFactory: ViewModelProviderFactory
