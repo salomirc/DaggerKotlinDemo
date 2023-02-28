@@ -7,15 +7,28 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.RequestManager
 import com.bumptech.glide.request.RequestOptions
 import com.example.daggerkotlindemo.R
+import com.example.daggerkotlindemo.util.Constants
 import dagger.Module
 import dagger.Provides
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
+
 
 // This module is for application level dependencies of the project
 // i.e. Retrofit, Glide instance etc, anything that need to exist and do not change
 // during the entire lifetime of the application
 @Module
 object AppModule {
+
+    @Singleton
+    @Provides
+    fun provideRetrofitInstance(): Retrofit {
+        return Retrofit.Builder()
+            .baseUrl(Constants.BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+    }
 
     // @Singleton annotation identifies a type that the injector only instantiates once, also the scope
     // of this type will be the same as AppComponent scope (entire lifetime of the application)
