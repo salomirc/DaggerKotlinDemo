@@ -139,3 +139,5 @@ fabric.properties
 /.idea/deploymentTargetSelector.xml
 /.idea/kotlinc.xml
 /.idea/migrations.xml
+/.idea/codeStyles/codeStyleConfig.xml
+/.idea/codeStyles/Project.xml
